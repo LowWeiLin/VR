@@ -10,6 +10,8 @@ public class FirstPersonController : MonoBehaviour {
 	float verticalRotation = 0f;
 	CharacterController cc;
 
+	public Font font;
+
 	void Start () {
 		cc = GetComponent<CharacterController>();
 
@@ -42,25 +44,7 @@ public class FirstPersonController : MonoBehaviour {
 		cc.SimpleMove(speed);
 	}
 
-	void accelerometerControls() {
-		// Rotate the character controller around the y-axis to turn from left to right
-		float rotationLeftRight = Input.acceleration.x * mouseSensitivity;
-		transform.Rotate(0, rotationLeftRight, 0);
-
-		// We don't want to rotate the character controller around the x-axis:
-		// character controllers are always upright, and it would affect physics and collision
-		// Instead, we change the pitch of the camera
-
-		float rotationUpDown = -Input.acceleration.z * mouseSensitivity;
-		verticalRotation += rotationUpDown;
-		verticalRotation = Mathf.Clamp(verticalRotation, -upDownRange, upDownRange);
-		Camera.main.transform.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
-	}
-
 	void Update () {
-		// Pick one
-
-//		devControls();
-		accelerometerControls();
+		devControls();
 	}
 }
