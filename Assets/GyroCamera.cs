@@ -16,8 +16,8 @@ public class GyroCamera : MonoBehaviour
 
 	void Update()
 	{
-		ApplyGyroRotation();
-		ApplyCalibration();
+//		ApplyGyroRotation();
+//		ApplyCalibration();
 	}
 
 //	void OnGUI()
