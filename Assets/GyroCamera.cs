@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// https://forum.unity3d.com/threads/sharing-gyroscope-camera-script-ios-tested.241825/
+
 public class GyroCamera : MonoBehaviour
 {
 	private float initialYAngle = 0f;
